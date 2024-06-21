@@ -1,0 +1,24 @@
+{
+    "ReRoutes": [
+        {
+            "ServiceName": "checkout-service",
+            "DownstreamPathTemplate": "/checkout/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "checkout",
+                    "Port": 80
+                }
+            ],
+            "UpstreamPathTemplate": "/proxy/{id}",
+            "UpstreamHttpMethod": ["Get", "Post", "Put", "Delete", "Options"]
+        }
+    ],
+    "GlobalConfiguration": {
+        "ServiceDiscoveryProvider": {
+            "Host": "localhost",
+            "Port": 8500,
+            "Type": "Consul"
+        }
+    }
+}

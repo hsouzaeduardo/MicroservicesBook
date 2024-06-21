@@ -1,0 +1,17 @@
+{
+    "ReRoutes": [
+        {
+            "DownstreamPathTemplate": "/",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "checkout",
+                    "Port": 80
+                }
+            ],
+            "UpstreamPathTemplate": "/checkout/",
+            "UpstreamHttpMethod": ["Get", "Post", "Put", "Delete", "Options"]
+        }
+    ],
+    "GlobalConfiguration": {}
+}
